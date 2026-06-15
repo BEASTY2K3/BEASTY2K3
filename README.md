@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./banner.svg" alt="Hari Vignesh Gothic Banner" width="100%" />
+  <img src="./banner.svg" alt="Hari Vignesh Cyber Gothic Banner" width="100%" />
 </p>
 
 ---
@@ -52,10 +52,18 @@ Engineering high-velocity, type-safe, and visually impactful software. Grounded 
 
 ### Activity Matrix
 
-<p align="center">
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=BEASTY2K3&show_icons=true&title_color=ff003c&text_color=e0e0e0&icon_color=ff003c&bg_color=000000&border_color=380a11&hide_border=false" alt="Gothic Stats" height="160" />
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=BEASTY2K3&layout=compact&title_color=ff003c&text_color=e0e0e0&icon_color=ff003c&bg_color=000000&border_color=380a11&ring_color=ff003c&hide_border=false" alt="Gothic Top Languages" height="160" />
-</p>
+<div align="center">
+  <table border="0" cellspacing="0" cellpadding="0" align="center" style="border: none; border-collapse: collapse;">
+    <tr style="border: none;">
+      <td style="border: none; padding: 10px;">
+        <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=BEASTY2K3&show_icons=true&hide_rank=true&title_color=ff003c&text_color=e0e0e0&icon_color=ff003c&bg_color=000000&border_color=380a11&hide_border=false" alt="Gothic Stats" height="165" />
+      </td>
+      <td style="border: none; padding: 10px;">
+        <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=BEASTY2K3&layout=compact&title_color=ff003c&text_color=e0e0e0&icon_color=ff003c&bg_color=000000&border_color=380a11&ring_color=ff003c&hide_border=false" alt="Gothic Top Languages" height="165" />
+      </td>
+    </tr>
+  </table>
+</div>
 
 ---
 

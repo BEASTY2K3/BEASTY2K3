@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 240" width="100%" height="100%" style="border-radius: 6px;">
+  <style>
+    /* Keyframe Animations */
+    @keyframes laserSweep {
+      0%, 100% { transform: translateY(0px); opacity: 0.4; }
+      50% { transform: translateY(40px); opacity: 1; filter: drop-shadow(0px 0px 4px #ff003c); }
+    }
+    @keyframes corePulse {
+      0%, 100% { opacity: 0.25; }
+      50% { opacity: 0.6; }
+    }
+    .laser {
+      animation: laserSweep 4s ease-in-out infinite;
+    }
+    .pulse-glow {
+      animation: corePulse 3s ease-in-out infinite;
+    }
+  </style>
+
+  <defs>
+    <!-- Dark Card Background -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0102" />
+      <stop offset="50%" stop-color="#120204" />
+      <stop offset="100%" stop-color="#020001" />
+    </linearGradient>
+
+    <!-- Crimson Neon Gradient -->
+    <linearGradient id="laserGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff003c" stop-opacity="0" />
+      <stop offset="15%" stop-color="#ff003c" stop-opacity="1" />
+      <stop offset="85%" stop-color="#ff003c" stop-opacity="1" />
+      <stop offset="100%" stop-color="#ff003c" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Dot Pattern -->
+    <pattern id="cardDots" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.5" fill="#ff003c" opacity="0.15" />
+    </pattern>
+  </defs>
+
+  <!-- Base Card -->
+  <rect width="380" height="240" fill="url(#cardGrad)" rx="6" />
+  
+  <!-- Dot Overlay -->
+  <rect width="380" height="240" fill="url(#cardDots)" rx="6" />
+
+  <!-- Ambient Red Corner Fills -->
+  <circle cx="340" cy="40" r="80" fill="#ff003c" opacity="0.12" filter="blur(20px)" class="pulse-glow" />
+  <circle cx="40" cy="200" r="80" fill="#ff003c" opacity="0.1" filter="blur(20px)" class="pulse-glow" />
+
+  <!-- Card borders -->
+  <rect x="10" y="10" width="360" height="220" rx="4" fill="none" stroke="#380a11" stroke-width="1.5" />
+  <rect x="14" y="14" width="352" height="212" rx="2" fill="none" stroke="#120204" stroke-width="1" />
+  
+  <!-- Corner Cuts -->
+  <path d="M 8,25 L 25,8" stroke="#ff003c" stroke-width="1.5" />
+  <path d="M 372,25 L 355,8" stroke="#ff003c" stroke-width="1.5" />
+  <path d="M 8,215 L 25,232" stroke="#ff003c" stroke-width="1.5" />
+  <path d="M 372,215 L 355,232" stroke="#ff003c" stroke-width="1.5" />
+
+  <!-- Technical Division Line -->
+  <line x1="15" y1="45" x2="365" y2="45" stroke="#380a11" stroke-width="1.5" />
+
+  <!-- HEADER TEXT -->
+  <text x="25" y="32" fill="#ff003c" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="900" letter-spacing="3">SECURE ACCESS ID</text>
+  <text x="355" y="32" fill="#e0e0e0" font-family="'Courier New', Courier, monospace" font-size="9" font-weight="bold" text-anchor="end" letter-spacing="1">CLEARANCE: L3</text>
+
+  <!-- CARD DETAIL CONTENT -->
+  <g transform="translate(25, 75)">
+    <!-- Developer Name -->
+    <text x="0" y="0" fill="#ff003c" font-family="Impact, sans-serif" font-size="22" letter-spacing="1">HARI VIGNESH A</text>
+    
+    <!-- Title -->
+    <text x="0" y="18" fill="#e0e0e0" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" letter-spacing="0.5">ROLE: SYSTEMS ARCHITECT</text>
+    
+    <!-- Info Stats -->
+    <g fill="#8b0000" font-family="'Courier New', Courier, monospace" font-size="9" font-weight="bold" transform="translate(0, 42)">
+      <text x="0" y="0">UID:      [ BEASTY2K3 // 142196988 ]</text>
+      <text x="0" y="14">SYS_CORE: [ REACT // NEXT.JS // TS ]</text>
+      <text x="0" y="28">SRV_CORE: [ JAVA // NODE.JS // CLOUD ]</text>
+      <text x="0" y="42">STATUS:   [ ACTIVE // STABLE // 200_OK ]</text>
+    </g>
+  </g>
+
+  <!-- BARCODE DESIGN ON BOTTOM RIGHT -->
+  <g transform="translate(245, 140)">
+    <!-- Barcode Container Border -->
+    <rect x="-5" y="-5" width="115" height="55" fill="#050001" stroke="#380a11" stroke-width="1" rx="2" />
+    
+    <!-- Barcode Ticks -->
+    <g fill="#ff003c" opacity="0.85">
+      <rect x="5" y="5" width="4" height="30" />
+      <rect x="11" y="5" width="2" height="30" />
+      <rect x="15" y="5" width="6" height="30" />
+      <rect x="25" y="5" width="2" height="30" />
+      <rect x="29" y="5" width="8" height="30" />
+      <rect x="39" y="5" width="3" height="30" />
+      <rect x="44" y="5" width="1" height="30" />
+      <rect x="47" y="5" width="5" height="30" />
+      <rect x="54" y="5" width="7" height="30" />
+      <rect x="63" y="5" width="2" height="30" />
+      <rect x="67" y="5" width="4" height="30" />
+      <rect x="73" y="5" width="1" height="30" />
+      <rect x="76" y="5" width="8" height="30" />
+      <rect x="86" y="5" width="3" height="30" />
+      <rect x="91" y="5" width="6" height="30" />
+      <rect x="99" y="5" width="2" height="30" />
+    </g>
+    
+    <!-- Laser scanner line -->
+    <rect x="2" y="5" width="101" height="1.5" fill="url(#laserGrad)" class="laser" />
+    
+    <!-- Code label -->
+    <text x="52" y="46" fill="#8b0000" font-family="'Courier New', Courier, monospace" font-size="7" font-weight="bold" text-anchor="middle" letter-spacing="1">ACCESS_GRNT_96988</text>
+  </g>
+
+  <!-- Left corner tech stats -->
+  <g transform="translate(20, 215)" fill="#4a0e17" font-family="'Courier New', Courier, monospace" font-size="7" font-weight="bold">
+    <text x="0" y="0">GRID_REF: [0x7F//CARD_ACCESS]</text>
+  </g>
+</svg>

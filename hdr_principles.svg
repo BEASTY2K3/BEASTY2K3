@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 60" width="100%" height="100%">
+  <!-- Base Tech Grid Lines -->
+  <line x1="10" y1="30" x2="840" y2="30" stroke="#380a11" stroke-width="1.5" />
+  <line x1="60" y1="20" x2="60" y2="40" stroke="#ff003c" stroke-width="2" />
+  
+  <!-- Left Target Indicator -->
+  <rect x="20" y="15" width="30" height="30" fill="#0c0102" stroke="#ff003c" stroke-width="1.5" rx="2" />
+  <circle cx="35" cy="30" r="4" fill="#ff003c" />
+  <line x1="35" y1="10" x2="35" y2="50" stroke="#ff003c" stroke-width="0.5" stroke-dasharray="2 2" />
+
+  <!-- Glowing Header Text -->
+  <text x="80" y="37" fill="#ff003c" font-family="'Courier New', Courier, monospace" font-size="18" font-weight="900" letter-spacing="4" filter="drop-shadow(0 0 6px rgba(255,0,60,0.5))">CORE_PRINCIPLES</text>
+
+  <!-- Right side tech readouts -->
+  <line x1="740" y1="20" x2="740" y2="40" stroke="#380a11" stroke-width="1" />
+  <text x="755" y="35" fill="#4a0e17" font-family="'Courier New', Courier, monospace" font-size="9" font-weight="bold" letter-spacing="2">[SYS_HDR_01]</text>
+  
+  <!-- Corner Ticks -->
+  <path d="M 5,20 L 5,5 Q 5,5 5,5" stroke="#ff003c" stroke-width="1.5" fill="none" opacity="0.6" />
+  <path d="M 845,20 L 845,5" stroke="#ff003c" stroke-width="1.5" fill="none" opacity="0.6" />
+</svg>

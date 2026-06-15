@@ -53,8 +53,8 @@ Engineering high-velocity, type-safe, and visually impactful software. Grounded 
 ### Activity Matrix
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=BEASTY2K3&show_icons=true&title_color=ff003c&text_color=e0e0e0&icon_color=ff003c&bg_color=000000&border_color=380a11&hide_border=false" alt="Gothic Stats" height="160" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=BEASTY2K3&layout=compact&title_color=ff003c&text_color=e0e0e0&icon_color=ff003c&bg_color=000000&border_color=380a11&ring_color=ff003c&hide_border=false" alt="Gothic Top Languages" height="160" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=BEASTY2K3&show_icons=true&title_color=ff003c&text_color=e0e0e0&icon_color=ff003c&bg_color=000000&border_color=380a11&hide_border=false" alt="Gothic Stats" height="160" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=BEASTY2K3&layout=compact&title_color=ff003c&text_color=e0e0e0&icon_color=ff003c&bg_color=000000&border_color=380a11&ring_color=ff003c&hide_border=false" alt="Gothic Top Languages" height="160" />
 </p>
 
 ---

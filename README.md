@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./banner.svg" alt="Hari Vignesh Gothic HUD Banner" width="100%" />
+  <img src="https://raw.githubusercontent.com/BEASTY2K3/BEASTY2K3/main/banner.svg" alt="Hari Vignesh Gothic HUD Banner" width="100%" />
 </p>
 
 ---
@@ -10,11 +10,11 @@
       <td style="border: none; padding: 20px; width: 55%; vertical-align: middle;">
         <h2 style="color: #ff003c; font-family: 'Courier New', Courier, monospace; margin-top: 0; letter-spacing: 2px;">OVERVIEW // INITIALIZATION</h2>
         <p style="color: #e0e0e0; font-family: 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.6; text-align: justify; margin: 0;">
-          Hari Vignesh A is an active systems engineer and full-stack developer specializing in high-performance web systems, custom interactive layouts, and robust application architectures. Leveraging Next.js, React, TypeScript, and Java, he builds clean, secure, and visually premium products designed for high-density environments.
+          Hari Vignesh A is the Founder and CEO of Crescenda, an innovative EdTech venture shaping the future of education through school robotics, AI, and IoT laboratory ecosystems. As an engineering leader and tech architect, he designs scalable curriculum models, full-stack learning management portals, and hardware-integrated school labs using React, TypeScript, Next.js, and Java systems.
         </p>
       </td>
       <td style="border: none; padding: 20px; width: 45%; text-align: center; vertical-align: middle;">
-        <img src="./developer_card.svg" alt="Secure Access ID Card" width="100%" style="max-width: 380px; box-shadow: 0 0 15px rgba(255,0,60,0.15);" />
+        <img src="https://raw.githubusercontent.com/BEASTY2K3/BEASTY2K3/main/developer_card.svg" alt="Secure Access ID Card" width="100%" style="max-width: 380px; box-shadow: 0 0 15px rgba(255,0,60,0.15);" />
       </td>
     </tr>
   </table>
@@ -23,23 +23,23 @@
 ---
 
 <p align="center">
-  <img src="./hdr_principles.svg" alt="Core Principles Header" width="100%" />
+  <img src="https://raw.githubusercontent.com/BEASTY2K3/BEASTY2K3/main/hdr_principles.svg" alt="Core Principles Header" width="100%" />
 </p>
 
 <blockquote style="border-left: 3px solid #ff003c; padding-left: 15px; margin: 20px 0; color: #e0e0e0; font-family: 'Courier New', Courier, monospace; font-size: 13.5px; line-height: 1.6;">
-  Engineering high-velocity, type-safe, and visually impactful software. Grounded in code hygiene, minimalist patterns, and optimal database efficiency.
+  Architecting EdTech platforms and IoT lab integrations to scale modern robotics education. Grounded in code reliability, high performance, and impactful educational models.
 </blockquote>
 
 <div style="font-family: 'Courier New', Courier, monospace; color: #e0e0e0; font-size: 13px; line-height: 1.8;">
-  <p><strong>[01] CURRENT FOCUS:</strong> Designing modular micro-frontends, robust backend APIs, and custom rendering pipelines.</p>
-  <p><strong>[02] ACADEMICS &amp; RESEARCH:</strong> Working on STEM curriculum models and configuration-driven user interfaces.</p>
-  <p><strong>[03] COLLABORATION:</strong> Open to performance tuning, library design, and security engineering projects.</p>
+  <p><strong>[01] CRESCENDA LEADERSHIP:</strong> Overseeing end-to-end hardware-software alignments for robotics and AI labs in academic institutions.</p>
+  <p><strong>[02] SYSTEM ARCHITECTURE:</strong> Building the next generation of Next.js student curriculum engines and school analytics dashboards.</p>
+  <p><strong>[03] RESEARCH &amp; DEVELOPMENT:</strong> Exploring configuration-driven UI components and embedded micro-controllers for IoT lab kits.</p>
 </div>
 
 ---
 
 <p align="center">
-  <img src="./hdr_stack.svg" alt="Technical Toolchain Header" width="100%" />
+  <img src="https://raw.githubusercontent.com/BEASTY2K3/BEASTY2K3/main/hdr_stack.svg" alt="Technical Toolchain Header" width="100%" />
 </p>
 
 <h4 style="color: #ff003c; font-family: 'Courier New', Courier, monospace; letter-spacing: 1.5px; margin-bottom: 10px;">LANGUAGES_ENV</h4>
@@ -70,7 +70,7 @@
 ---
 
 <p align="center">
-  <img src="./hdr_activity.svg" alt="Activity Matrix Header" width="100%" />
+  <img src="https://raw.githubusercontent.com/BEASTY2K3/BEASTY2K3/main/hdr_activity.svg" alt="Activity Matrix Header" width="100%" />
 </p>
 
 <div align="center">

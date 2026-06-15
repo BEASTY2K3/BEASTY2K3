@@ -17,13 +17,54 @@
       0%, 100% { opacity: 1; }
       50% { opacity: 0.3; }
     }
+    @keyframes drawBorder {
+      0% { stroke-dashoffset: 2340; opacity: 0; }
+      100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
     @keyframes scanVertical {
       0% { transform: translateY(-5px); }
       50% { transform: translateY(300px); }
       100% { transform: translateY(-5px); }
     }
 
-    /* Target origins centered on HUD Core (670px, 190px) */
+    /* Bat Flying Animations */
+    @keyframes flyLeft {
+      0% { transform: translate(900px, 40px) scale(0.45); opacity: 0; }
+      10% { opacity: 0.85; }
+      90% { opacity: 0.85; }
+      100% { transform: translate(-100px, 120px) scale(0.45); opacity: 0; }
+    }
+    @keyframes flyRight {
+      0% { transform: translate(-100px, 150px) scale(0.3) scaleX(-1); opacity: 0; }
+      10% { opacity: 0.75; }
+      90% { opacity: 0.75; }
+      100% { transform: translate(900px, 70px) scale(0.3) scaleX(-1); opacity: 0; }
+    }
+    @keyframes flapWings {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.25); }
+    }
+
+    /* Assigning animations */
+    .hud-border {
+      stroke-dasharray: 2340;
+      stroke-dashoffset: 2340;
+      animation: drawBorder 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+    .hud-fade {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+      animation-delay: 1.5s;
+    }
+    .hud-fade-delayed {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+      animation-delay: 2.2s;
+    }
     .rot-cw {
       transform-origin: 670px 190px;
       animation: spinCW 28s linear infinite;
@@ -41,6 +82,20 @@
     }
     .laser-line {
       animation: scanVertical 6s ease-in-out infinite;
+    }
+    
+    .bat1 {
+      transform-origin: center;
+      animation: flyLeft 14s linear infinite;
+    }
+    .bat2 {
+      transform-origin: center;
+      animation: flyRight 18s linear infinite;
+      animation-delay: 5s;
+    }
+    .flap-wings {
+      transform-origin: 30px 0px;
+      animation: flapWings 0.32s ease-in-out infinite;
     }
   </style>
 
@@ -71,44 +126,50 @@
   <!-- Base Background -->
   <rect width="850" height="380" fill="url(#gothicCyberBg)" />
   
-  <!-- Grid Texture Overlay -->
-  <rect width="850" height="380" fill="url(#hudGrid)" />
+  <!-- Grid Texture Overlay (Fades In) -->
+  <rect width="850" height="380" fill="url(#hudGrid)" class="hud-fade" />
 
-  <!-- Ambient Red Core Glows -->
-  <circle cx="150" cy="190" r="160" fill="url(#glowRed)" class="glow-core" filter="url(#blurFilter)" />
-  <circle cx="670" cy="190" r="210" fill="url(#glowRed)" class="glow-core" filter="url(#blurFilter)" />
+  <!-- Ambient Red Core Glows (Fade In) -->
+  <g class="hud-fade">
+    <circle cx="150" cy="190" r="160" fill="url(#glowRed)" class="glow-core" filter="url(#blurFilter)" />
+    <circle cx="670" cy="190" r="210" fill="url(#glowRed)" class="glow-core" filter="url(#blurFilter)" />
+  </g>
 
-  <!-- Cybernetic HUD Framing -->
-  <rect x="15" y="15" width="820" height="350" rx="6" fill="none" stroke="#380a11" stroke-width="2" />
+  <!-- Cybernetic HUD Drawing Border -->
+  <rect x="15" y="15" width="820" height="350" rx="6" fill="none" stroke="#380a11" stroke-width="2" class="hud-border" />
   
-  <!-- Outer Corner HUD Accents -->
-  <path d="M 10,50 L 10,10 L 50,10" stroke="#ff003c" stroke-width="3.5" fill="none" />
-  <path d="M 840,50 L 840,10 L 800,10" stroke="#ff003c" stroke-width="3.5" fill="none" />
-  <path d="M 10,330 L 10,370 L 50,370" stroke="#ff003c" stroke-width="3.5" fill="none" />
-  <path d="M 840,330 L 840,370 L 800,370" stroke="#ff003c" stroke-width="3.5" fill="none" />
+  <!-- Outer Corner HUD Accents (Fade In) -->
+  <g stroke="#ff003c" stroke-width="3.5" fill="none" class="hud-fade">
+    <path d="M 10,50 L 10,10 L 50,10" />
+    <path d="M 840,50 L 840,10 L 800,10" />
+    <path d="M 10,330 L 10,370 L 50,370" />
+    <path d="M 840,330 L 840,370 L 800,370" />
+  </g>
 
-  <!-- Technical Division Lines -->
-  <line x1="25" y1="60" x2="825" y2="60" stroke="#ff003c" stroke-width="0.75" opacity="0.4" />
-  <line x1="25" y1="320" x2="825" y2="320" stroke="#ff003c" stroke-width="0.75" opacity="0.4" />
-  <line x1="450" y1="60" x2="450" y2="320" stroke="#380a11" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.4" />
+  <!-- Technical Division Lines (Fade In) -->
+  <g class="hud-fade" opacity="0.5">
+    <line x1="25" y1="60" x2="825" y2="60" stroke="#ff003c" stroke-width="0.75" />
+    <line x1="25" y1="320" x2="825" y2="320" stroke="#ff003c" stroke-width="0.75" />
+    <line x1="450" y1="60" x2="450" y2="320" stroke="#380a11" stroke-width="1.5" stroke-dasharray="5 5" />
+  </g>
 
   <!-- Laser Scanline Indicator (Vertically Animating) -->
-  <line x1="25" y1="0" x2="825" y2="0" stroke="#ff003c" stroke-width="1.5" opacity="0.15" class="laser-line" />
+  <line x1="25" y1="0" x2="825" y2="0" stroke="#ff003c" stroke-width="1.5" opacity="0.12" class="laser-line hud-fade" />
 
-  <!-- LEFT PANEL: Technical Typography & Readouts -->
-  <g transform="translate(50, 95)">
+  <!-- LEFT PANEL: Technical Typography & Readouts (Fade In Delayed) -->
+  <g transform="translate(50, 95)" class="hud-fade-delayed">
     <!-- Active Status Module -->
     <g transform="translate(0, 0)">
       <rect x="0" y="0" width="150" height="24" rx="3" fill="#150205" stroke="#ff003c" stroke-width="1" />
       <circle cx="14" cy="12" r="3.5" fill="#ff003c" class="blinking" />
-      <text x="28" y="16" fill="#e0e0e0" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="900" letter-spacing="2.5">CORE_RUNNING</text>
+      <text x="28" y="16" fill="#e0e0e0" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="900" letter-spacing="2.5">FOUNDER_RUNNING</text>
     </g>
 
     <!-- Header name (Impact Gothic) -->
     <text x="0" y="70" font-family="Impact, 'Arial Black', sans-serif" font-size="58" font-weight="900" fill="#ff003c" letter-spacing="1.5" filter="drop-shadow(0 0 10px rgba(255,0,60,0.45))">HARI VIGNESH</text>
     
     <!-- Professional description -->
-    <text x="0" y="105" font-family="'Courier New', Courier, monospace" font-size="14.5" font-weight="bold" fill="#e0e0e0" letter-spacing="0.5">FULL-STACK ARCHITECT &amp; SYSTEMS ENGINEER</text>
+    <text x="0" y="105" font-family="'Courier New', Courier, monospace" font-size="14.5" font-weight="bold" fill="#e0e0e0" letter-spacing="0.5">FOUNDER &amp; CEO, CRESCENDA</text>
     
     <!-- Accent Line -->
     <line x1="0" y1="125" x2="370" y2="125" stroke="#380a11" stroke-width="3" />
@@ -116,35 +177,27 @@
     
     <!-- Cyber HUD Technical Parameters (No-weakness) -->
     <g font-family="'Courier New', Courier, monospace" font-size="10.5" font-weight="bold" fill="#ff003c" transform="translate(0, 150)">
-      <text x="0" y="0" opacity="0.9">SYSTEM_ID:   [ BEASTY2K3 // SECURITY_L3 ]</text>
-      <text x="0" y="22" opacity="0.9">FRAMEWORK:   [ NEXT.JS // REACT // NODE.JS ]</text>
-      <text x="0" y="44" opacity="0.9">DATABASES:   [ POSTGRESQL // MONGODB // REDIS ]</text>
-      <text x="0" y="66" opacity="0.9">MONITORING:  [ SYSTEM_ACTIVE // ZERO_DOWNTIME ]</text>
+      <text x="0" y="0" opacity="0.9">SYSTEM_ID:   [ BEASTY2K3 // CRESCENDA_CEO ]</text>
+      <text x="0" y="22" opacity="0.9">MISSION:     [ ROBOTICS // STEM // EDTECH LABS ]</text>
+      <text x="0" y="44" opacity="0.9">CORE_STACK:  [ NEXT.JS // REACT // NODE.JS // JAVA ]</text>
+      <text x="0" y="66" opacity="0.9">STATUS:      [ SCALING_INFRA // ACTIVE_PRODUCTION ]</text>
     </g>
   </g>
 
-  <!-- RIGHT PANEL: Animated Cybernetic Radar / Mainframe Core -->
-  <g transform="translate(0, 0)">
+  <!-- RIGHT PANEL: Animated Cybernetic Radar / Mainframe Core (Fade In Delayed) -->
+  <g class="hud-fade-delayed" transform="translate(0, 0)">
     <!-- Center Orb Glow -->
     <circle cx="670" cy="190" r="50" fill="url(#glowRed)" class="glow-core" />
 
     <!-- HUD Radials and Coordinate Lines -->
     <line x1="670" y1="60" x2="670" y2="320" stroke="#380a11" stroke-width="1.5" opacity="0.5" />
     <line x1="540" y1="190" x2="800" y2="190" stroke="#380a11" stroke-width="1.5" opacity="0.5" />
-    
-    <!-- Diagonal crosshairs -->
-    <line x1="578" y1="98" x2="762" y2="282" stroke="#380a11" stroke-width="1" opacity="0.3" stroke-dasharray="3 5" />
-    <line x1="578" y1="282" x2="762" y2="98" stroke="#380a11" stroke-width="1" opacity="0.3" stroke-dasharray="3 5" />
 
     <!-- Rotating HUD Ring System -->
-    <!-- Outermost CW Ring -->
     <circle cx="670" cy="190" r="105" stroke="#ff003c" stroke-dasharray="35 50" stroke-width="2.5" fill="none" class="rot-cw" />
     <circle cx="670" cy="190" r="95" stroke="#4a0e17" stroke-width="1" fill="none" opacity="0.3" />
-    <!-- Mid CCW Ring -->
     <circle cx="670" cy="190" r="80" stroke="#ff003c" stroke-dasharray="15 25" stroke-width="1.5" fill="none" class="rot-ccw" />
-    <!-- Inner CW Ring -->
     <circle cx="670" cy="190" r="62" stroke="#4a0e17" stroke-dasharray="5 12" stroke-width="1" fill="none" class="rot-cw" />
-    <!-- Innermost CCW Ring -->
     <circle cx="670" cy="190" r="45" stroke="#ff003c" stroke-dasharray="45 15" stroke-width="1" fill="none" class="rot-ccw" />
 
     <!-- HUD Center Lock Core -->
@@ -153,7 +206,24 @@
     <!-- Floating HUD Telemetry Readouts -->
     <text x="670" y="80" fill="#ff003c" font-family="'Courier New', Courier, monospace" font-size="8" font-weight="900" text-anchor="middle" letter-spacing="1">RADAR_LOCK</text>
     <text x="670" y="308" fill="#4a0e17" font-family="'Courier New', Courier, monospace" font-size="8" font-weight="bold" text-anchor="middle" letter-spacing="0.5">SYS_POS: 670//190</text>
-    <text x="548" y="185" fill="#4a0e17" font-family="'Courier New', Courier, monospace" font-size="8.5" font-weight="bold" text-anchor="start">R_105</text>
-    <text x="792" y="185" fill="#4a0e17" font-family="'Courier New', Courier, monospace" font-size="8.5" font-weight="bold" text-anchor="end">CW_28s</text>
+  </g>
+
+  <!-- ANIMATED FLYING GOTHIC BATS (Fade In Delayed) -->
+  <g class="hud-fade-delayed">
+    <!-- Bat 1: Flying Left -->
+    <g class="bat1">
+      <g class="flap-wings">
+        <!-- Bat path centered on (30,0) -->
+        <path d="M0,0 Q12,-16 24,-8 Q30,-20 36,-8 Q48,-16 60,0 Q40,12 30,6 Q20,12 0,0 Z" fill="#ff003c" opacity="0.85" filter="drop-shadow(0 0 3px rgba(255,0,60,0.5))" />
+      </g>
+    </g>
+
+    <!-- Bat 2: Flying Right -->
+    <g class="bat2">
+      <g class="flap-wings" style="animation-delay: 0.15s; animation-duration: 0.28s;">
+        <!-- Bat path centered on (30,0) -->
+        <path d="M0,0 Q12,-16 24,-8 Q30,-20 36,-8 Q48,-16 60,0 Q40,12 30,6 Q20,12 0,0 Z" fill="#8b0000" opacity="0.75" />
+      </g>
+    </g>
   </g>
 </svg>

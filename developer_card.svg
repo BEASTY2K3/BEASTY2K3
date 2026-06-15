@@ -9,6 +9,30 @@
       0%, 100% { opacity: 0.25; }
       50% { opacity: 0.6; }
     }
+    @keyframes drawCardBorder {
+      0% { stroke-dashoffset: 1160; opacity: 0; }
+      100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+    @keyframes cardFadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .card-border {
+      stroke-dasharray: 1160;
+      stroke-dashoffset: 1160;
+      animation: drawCardBorder 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+    .card-fade {
+      opacity: 0;
+      animation: cardFadeIn 1.2s ease-out forwards;
+      animation-delay: 1.2s;
+    }
+    .card-fade-delayed {
+      opacity: 0;
+      animation: cardFadeIn 1.2s ease-out forwards;
+      animation-delay: 1.8s;
+    }
     .laser {
       animation: laserSweep 4s ease-in-out infinite;
     }
@@ -42,49 +66,55 @@
   <!-- Base Card -->
   <rect width="380" height="240" fill="url(#cardGrad)" rx="6" />
   
-  <!-- Dot Overlay -->
-  <rect width="380" height="240" fill="url(#cardDots)" rx="6" />
+  <!-- Dot Overlay (Fades In) -->
+  <rect width="380" height="240" fill="url(#cardDots)" rx="6" class="card-fade" />
 
-  <!-- Ambient Red Corner Fills -->
-  <circle cx="340" cy="40" r="80" fill="#ff003c" opacity="0.12" filter="blur(20px)" class="pulse-glow" />
-  <circle cx="40" cy="200" r="80" fill="#ff003c" opacity="0.1" filter="blur(20px)" class="pulse-glow" />
+  <!-- Ambient Red Corner Fills (Fades In) -->
+  <g class="card-fade">
+    <circle cx="340" cy="40" r="80" fill="#ff003c" opacity="0.12" filter="blur(20px)" class="pulse-glow" />
+    <circle cx="40" cy="200" r="80" fill="#ff003c" opacity="0.1" filter="blur(20px)" class="pulse-glow" />
+  </g>
 
-  <!-- Card borders -->
-  <rect x="10" y="10" width="360" height="220" rx="4" fill="none" stroke="#380a11" stroke-width="1.5" />
-  <rect x="14" y="14" width="352" height="212" rx="2" fill="none" stroke="#120204" stroke-width="1" />
+  <!-- Card drawing border -->
+  <rect x="10" y="10" width="360" height="220" rx="4" fill="none" stroke="#380a11" stroke-width="1.5" class="card-border" />
+  <rect x="14" y="14" width="352" height="212" rx="2" fill="none" stroke="#120204" stroke-width="1" class="card-border" style="animation-delay: 0.3s;" />
   
-  <!-- Corner Cuts -->
-  <path d="M 8,25 L 25,8" stroke="#ff003c" stroke-width="1.5" />
-  <path d="M 372,25 L 355,8" stroke="#ff003c" stroke-width="1.5" />
-  <path d="M 8,215 L 25,232" stroke="#ff003c" stroke-width="1.5" />
-  <path d="M 372,215 L 355,232" stroke="#ff003c" stroke-width="1.5" />
+  <!-- Corner Cuts (Fade In) -->
+  <g stroke="#ff003c" stroke-width="1.5" class="card-fade">
+    <path d="M 8,25 L 25,8" />
+    <path d="M 372,25 L 355,8" />
+    <path d="M 8,215 L 25,232" />
+    <path d="M 372,215 L 355,232" />
+  </g>
 
-  <!-- Technical Division Line -->
-  <line x1="15" y1="45" x2="365" y2="45" stroke="#380a11" stroke-width="1.5" />
+  <!-- Technical Division Line (Fade In) -->
+  <line x1="15" y1="45" x2="365" y2="45" stroke="#380a11" stroke-width="1.5" class="card-fade" />
 
-  <!-- HEADER TEXT -->
-  <text x="25" y="32" fill="#ff003c" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="900" letter-spacing="3">SECURE ACCESS ID</text>
-  <text x="355" y="32" fill="#e0e0e0" font-family="'Courier New', Courier, monospace" font-size="9" font-weight="bold" text-anchor="end" letter-spacing="1">CLEARANCE: L3</text>
+  <!-- HEADER TEXT (Fade In) -->
+  <g class="card-fade" font-family="'Courier New', Courier, monospace" font-weight="bold">
+    <text x="25" y="32" fill="#ff003c" font-size="11" font-weight="900" letter-spacing="3">SECURE ACCESS ID</text>
+    <text x="355" y="32" fill="#e0e0e0" font-size="9" text-anchor="end" letter-spacing="1">CLEARANCE: L3</text>
+  </g>
 
-  <!-- CARD DETAIL CONTENT -->
-  <g transform="translate(25, 75)">
+  <!-- CARD DETAIL CONTENT (Fade In Delayed) -->
+  <g transform="translate(25, 75)" class="card-fade-delayed">
     <!-- Developer Name -->
     <text x="0" y="0" fill="#ff003c" font-family="Impact, sans-serif" font-size="22" letter-spacing="1">HARI VIGNESH A</text>
     
     <!-- Title -->
-    <text x="0" y="18" fill="#e0e0e0" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" letter-spacing="0.5">ROLE: SYSTEMS ARCHITECT</text>
+    <text x="0" y="18" fill="#e0e0e0" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold" letter-spacing="0.5">ROLE: FOUNDER &amp; CEO</text>
     
     <!-- Info Stats -->
     <g fill="#8b0000" font-family="'Courier New', Courier, monospace" font-size="9" font-weight="bold" transform="translate(0, 42)">
       <text x="0" y="0">UID:      [ BEASTY2K3 // 142196988 ]</text>
-      <text x="0" y="14">SYS_CORE: [ REACT // NEXT.JS // TS ]</text>
-      <text x="0" y="28">SRV_CORE: [ JAVA // NODE.JS // CLOUD ]</text>
-      <text x="0" y="42">STATUS:   [ ACTIVE // STABLE // 200_OK ]</text>
+      <text x="0" y="14">SYS_CORE: [ ROBOTICS // STEM // EDTECH ]</text>
+      <text x="0" y="28">SRV_CORE: [ CRESCENDA // SCALE_OPS ]</text>
+      <text x="0" y="42">STATUS:   [ SCALING_UP // ACTIVE // 200 ]</text>
     </g>
   </g>
 
-  <!-- BARCODE DESIGN ON BOTTOM RIGHT -->
-  <g transform="translate(245, 140)">
+  <!-- BARCODE DESIGN ON BOTTOM RIGHT (Fade In Delayed) -->
+  <g transform="translate(245, 140)" class="card-fade-delayed">
     <!-- Barcode Container Border -->
     <rect x="-5" y="-5" width="115" height="55" fill="#050001" stroke="#380a11" stroke-width="1" rx="2" />
     
@@ -112,11 +142,11 @@
     <rect x="2" y="5" width="101" height="1.5" fill="url(#laserGrad)" class="laser" />
     
     <!-- Code label -->
-    <text x="52" y="46" fill="#8b0000" font-family="'Courier New', Courier, monospace" font-size="7" font-weight="bold" text-anchor="middle" letter-spacing="1">ACCESS_GRNT_96988</text>
+    <text x="52" y="46" fill="#8b0000" font-family="'Courier New', Courier, monospace" font-size="7" font-weight="bold" text-anchor="middle" letter-spacing="1">CRESCENDA_CEO</text>
   </g>
 
-  <!-- Left corner tech stats -->
-  <g transform="translate(20, 215)" fill="#4a0e17" font-family="'Courier New', Courier, monospace" font-size="7" font-weight="bold">
+  <!-- Left corner tech stats (Fade In Delayed) -->
+  <g transform="translate(20, 215)" fill="#4a0e17" font-family="'Courier New', Courier, monospace" font-size="7" font-weight="bold" class="card-fade-delayed">
     <text x="0" y="0">GRID_REF: [0x7F//CARD_ACCESS]</text>
   </g>
 </svg>
